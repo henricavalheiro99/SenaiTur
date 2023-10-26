@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Viagens</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/minhasviagensstyle.css">
+    <script src="https://kit.fontawesome.com/3143d98b09.js" crossorigin="anonymous"></script>
+    <script src="assets/js/minhasviagens.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div class="logo"><img src="assets/img/logo.png" alt=""></div>
+            <div class="pages">
+                <a href="index.html">Ínicio</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="passagens.html">Passagens</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="blog.html">Blog</a>
+                <a href="contato.html">Contato</a>
+                <a href="reservas.html"><div class="circle"><img src="assets/img/icons/bag.png" alt=""></div></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="orng_title">
+            <div class="alingmg_cont">
+                <img src="assets/img/icons/bag.png" alt="">
+                <span class="title_mv">Minhas Viagens</span>
+                <div class="riscob"></div>
+            </div>  
+        </div>
+        <div class="wht_cont">
+            <div class="center_grid">
+                <div class="grid_1">
+                    <div class="infos">
+                        <div class="user_cont">
+                             <div class="dot"></div>
+                             <span class="name">Nome Sobrenome</span>
+                             <span class="viagens_count">0 Viagens</span>
+                        </div>
+                        <div class="info_cont">
+    
+                        </div>
+                    </div>
+                    <div class="gd_viagens">
+                        <span>Viagens</span>
+                        <div class="risco"></div>
+                        <div class="gd_viagens-itens">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="ft_bkgnd">
+            <div class="ft_logo"><img width="150px" src="assets/img/logo.png" alt=""></div>
+            <div class="text_tabs">
+                <div class="tabs">
+                    <a class="text_tab" href="">Minhas viagens</a>
+                    <a class="text_tab" href="">Passagens internacionais</a>
+                    <a class="text_tab" href="">Passagens nacionais</a>
+                    <a class="text_tab" href="">Passagens com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Passagens baratas</a>
+                    <a class="text_tab" href="">Passagens promocionais</a>
+                    <a class="text_tab" href="">Pacotes</a>
+                    <a class="text_tab" href="">Pacotes com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Sobre</a>
+                    <a class="text_tab" href="">Nosso blog</a>
+                    <a class="text_tab" href="">FAQs</a>
+                    <a class="text_tab" href="">Contato</a>
+                </div>
+            </div>
+            <h2 class="siga">Siga-nos! Nas redes sociais</h2>
+            <div class="redes_sociais">
+                <a href=""><img class="rede" src="assets/img/socialmedias/twiter.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/instagram.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/youtube.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/facebook.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/pinterest.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="assets/js/passagens.js"></script>
+<script>
+    if(JSON.parse(localStorage.getItem('reservas')) == null || JSON.parse(localStorage.getItem('reservas').length == 0)){
+        var reservas = []
+        localStorage.setItem("reservas", JSON.stringify(reservas));
+    }
+
+var passagens = JSON.parse(jsonpassagens)
+var arrayreservas = localStorage.getItem("reservas")
+const gridreservas = document.querySelector('.gd_viagens-itens')
+
+for(let i in passagens.cidades)
+{
+    for(let j in passagens.cidades[i].viagens)
+    {
+        if(arrayreservas.indexOf(passagens.cidades[i].viagens[j].id) != -1)
+        {
+            gridreservas.innerHTML += `<div class="gd_viagens-item">
+                                <div class="fill">
+                                    <div style="background-image: url(assets/img/cidades/${passagens.cidades[i].viagens[j].img});" class="city_img"></div>
+                                    <div class="gd_viagens_info">
+                                        <div class="separa_cidest">
+                                            <span class="inf_cidade">${passagens.cidades[i].viagens[j].destino}</span>
+                                            <span class="estado">${passagens.cidades[i].viagens[j].estado}</span>
+                                        </div>
+                                        <div class="separa_idavolta">
+                                            <span class="ida">Ida: ${passagens.cidades[i].viagens[j].ida}</span>
+                                            <span class="volta">Volta: ${passagens.cidades[i].viagens[j].volta}</span>
+                                        </div>
+                                        <span class="voo_dur"><i class="fa-regular fa-clock"></i>   Duração voo: 12hr </span>
+                                        <span class="preco">R$${passagens.cidades[i].viagens[j]["preço"]}</span>
+                                    </div>
+                                </div>
+                                <div class="extra">
+                                    <span class="classif">Classifique a viagem: </span>
+                                    <div class="stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="count_star"></span>
+                                </div>
+                            </div>`
+        }
+    }
+}
+</script>
+</html>

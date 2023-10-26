@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/3143d98b09.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <script src="assets/js/passagens.js"></script>
+    <title>SenaiTur</title>
+</head>
+<style>
+
+</style>
+<body>
+    <header>
+        <div class="menu">
+            <div class="logo"><img src="assets/img/logo.png" alt=""></div>
+            <div class="pages">
+                <a href="sobre.html">Sobre</a>
+                <a href="passagens.html">Passagens</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="blog.html">Blog</a>
+                <a href="contato.html">Contato</a>
+                <a href="minhasviagens.html"><div class="circle"><img src="assets/img/icons/bag.png" alt=""></div></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="slide">
+            <div class="passagens">
+                <div class="top">
+                    <input type="checkbox" id="volta" checked="true" name="volta">
+                    <div class="title"><h2 class="tl">PASSAGENS AÉREAS</h2><img src="assets/img/icons/airicon.svg" alt=""></div>
+                    <label for="volta"><div class="chek"><div id="idavolta">Ida e Volta</div><div id="ida">Somente Ida</div></div></label>
+                </div>
+                <div class="bot">
+                    <div class="input">
+                        <label for="origem">ORIGEM</label>
+                        <select name="" id="origem">
+                            <option value="all">Todos</option>
+                        </select>
+                    </div>
+                    <div class="input">
+                        <label for="destino">DESTINO</label>
+                        <select name="" id="destino">
+                            <option value="all">Todos</option>
+                        </select>
+                    </div>
+                    <div class="datas">
+                        <div class="input">
+                            <label for="data-ida">Ida</label>                        
+                            <input type="date" name="" id="data-ida">
+                        </div>
+                        <div class="input">
+                            <label for="data-volta">Volta</label>
+                            <input type="date" name="" id="data-volta">                       
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="passageiros">Passageiros</label>
+                        <select style="text-align: center;" name="" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                        </select>                        
+                    </div>
+                    <a href="passagens.html"><button class="orange" id="buscar">BUSCAR</button></a>
+                </div>
+            </div>
+        </div>
+
+        <section class="descontos">
+            <div style="display: flex; align-self: start; margin-right: auto; "><h2 class="tl">PASSAGENS COM DESCONTO</h2><div style="margin-top: 10px;"><img width="50px" src="assets/img/icons/tickets.png" alt=""></div></div>
+            <div class="cidades-desconto"></div>
+        </section>
+
+        <section class="sobre">
+                <div class="box">
+                <div>
+                    <h2>Quem Somos</h2>
+                    <p>Somos uma empresa apaixonada por viagens e aventuras. Bem-vindo à Senai Tur, onde transformamos seus sonhos de explorar o mundo em realidade, busque saber um pouco mais.</p>
+                    <button class="orange"><a href="sobre.html">Saiba Mais</a></button>
+                </div>
+                <div>
+                    <h2>Passagens</h2>
+                    <p>Explore nosso vasto catálogo de passagens aéreas e encontre as melhores ofertas para os destinos mais deslumbrantes do mundo. Planeje sua próxima aventura com tarifas imbatíveis!</p>
+                    <button class="orange"><a href="passagens.html">Saiba Mais</a></button>
+                </div>
+                <div>
+                    <h2>NOSSO BLOG</h2>
+                    <p>Leia nosso blog para descobrir dicas valiosas sobre como tornar sua viagem inesquecível. Estamos aqui para garantir que você tenha uma experiência de viagem perfeita.</p>
+                    <button class="orange"><a href="blog.html">Saiba Mais</a></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="ft_bkgnd">
+            <div class="ft_logo"><img width="150px" src="assets/img/logo.png" alt=""></div>
+            <div class="text_tabs">
+                <div class="tabs">
+                    <a class="text_tab" href="">Minhas viagens</a>
+                    <a class="text_tab" href="">Passagens internacionais</a>
+                    <a class="text_tab" href="">Passagens nacionais</a>
+                    <a class="text_tab" href="">Passagens com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Passagens baratas</a>
+                    <a class="text_tab" href="">Passagens promocionais</a>
+                    <a class="text_tab" href="">Pacotes</a>
+                    <a class="text_tab" href="">Pacotes com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Sobre</a>
+                    <a class="text_tab" href="">Nosso blog</a>
+                    <a class="text_tab" href="">FAQs</a>
+                    <a class="text_tab" href="">Contato</a>
+                </div>
+            </div>
+            <h2 class="siga">Siga-nos! Nas redes sociais</h2>
+            <div class="redes_sociais">
+                <a href=""><img class="rede" src="assets/img/socialmedias/twiter.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/instagram.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/youtube.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/facebook.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/pinterest.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script>
+    if(JSON.parse(localStorage.getItem('reservas')) == null || JSON.parse(localStorage.getItem('reservas').length == 0)){
+        var reservas = []
+        localStorage.setItem("reservas", JSON.stringify(reservas));
+    }
+
+    var slide = document.getElementById('slide')
+    var volta = document.getElementById("volta")
+    var buscar = document.getElementById('buscar')
+
+    var passagens = JSON.parse(jsonpassagens)
+    var origem = document.getElementById('origem')
+    var destino = document.getElementById('destino')
+    var table = document.getElementById('passTable')
+
+    for(let cidade in passagens.cidades){
+        let opt = document.createElement('option')
+        opt.value = passagens.cidades[cidade].nome
+        opt.textContent = passagens.cidades[cidade].nome
+        origem.append(opt)
+    }
+    origem.addEventListener('change', ()=>{
+        destino.innerHTML = '<option selected value="all">Todos</option>'
+        var destinos = []
+        
+        if(origem.value != 'all'){
+            for(let cidade in passagens.cidades){   
+                if(passagens.cidades[cidade].nome == origem.value){
+                    for(let i=0; i<passagens.cidades[cidade].viagens.length; i++){
+                        destinos.push(passagens.cidades[cidade].viagens[i].destino)
+                    }
+                }
+            }
+        }
+        var destinos = destinos.filter((este, i) => destinos.indexOf(este) === i);
+        destinos = destinos.sort()
+        for(ci of destinos){
+            let opt = document.createElement('option')
+            opt.value = ci
+            opt.textContent = ci
+            destino.append(opt)
+        }
+    })
+
+
+    let i = 0
+    setInterval(() => {
+        slide.style.backgroundImage = `url(assets/img/slide/${i}.png)`
+        i++
+        i > 7 ? i=0 : i=i
+    }, 5000);
+
+    function checkVolta(){
+        var ida = document.getElementById("ida")
+        var idavolta = document.getElementById('idavolta')
+
+        if(volta.checked){
+            document.querySelector('.datas div:nth-child(2)').style.opacity = '1'
+            ida.classList.remove('divchecked')
+            idavolta.classList.add('divchecked')
+        }else{
+            document.querySelector('.datas div:nth-child(2)').style.opacity = '0'
+            ida.classList.add('divchecked')
+            idavolta.classList.remove('divchecked')
+        }
+    }
+    checkVolta()
+
+    volta.addEventListener('click', checkVolta)
+
+    var descontos = ['Rio de Janeiro', 'São Paulo', 'Fernando de Noronha', 'Salvador', 'Foz do Iguaçu', 'Bonito']
+    var preco = [350, 300, 450, 250, 400, 300]
+    for(let quant=0; quant<descontos.length; quant++){
+        document.querySelector('.cidades-desconto').innerHTML += `         
+                <div style="background-image: url(assets/img/desconto/cidade${quant}.png);" class="cidade">
+                    <div class="details">
+                        <div class="detail-box">
+                            <h3>${descontos[quant]}</h3>
+                            <h3>R$${preco[quant]},00</h3>
+                            <button class="vermais">Ver Mais</button>
+                        </div>
+                    </div>
+                </div>
+           `
+    }
+</script>
+</html>

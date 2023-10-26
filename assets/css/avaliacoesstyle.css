@@ -1,0 +1,67 @@
+#amain{
+    text-align: center;
+}
+
+#title-a{
+    font-size: 1.5em;
+    padding-top: 40px;
+}
+
+#a-container{
+    padding-top: 40px;
+}
+
+.a-parte{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.a-cards{
+    text-align: center;
+    background-color: var(--branco);
+    padding: 20px;
+    border: none;
+    box-shadow: 15px 15px 30px #cbcbcb,
+                -15px -15px 30px #ffffff;
+    padding: 25px;
+    height: 250px;
+    width: 260px;
+    border-radius: 30px;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+.a-cards:hover{
+    transform: scale(1.075);
+    transition: 0.8s;
+    background-color: #f1f0f0;
+}
+
+.dar-padding-top{
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+.a-imgs{
+    height: 70px;
+    width: 70px;
+}
+
+.a-nome{
+    font-size: 1.5em;
+    color: #FF7903;
+    padding-bottom: 1px;
+}
+
+.a-cargo{
+    font-size: 0.9em;
+    color: #bfbfbf;
+    padding-bottom: 10px;
+}
+
+.a-descricao{
+    font-size: 1em;
+}

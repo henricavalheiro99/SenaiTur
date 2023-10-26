@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3143d98b09.js" crossorigin="anonymous"></script>
+    <script src="assets/js/passagens.js"></script>
+    <link rel="stylesheet" href="assets/css/passagens.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Passagens</title>
+</head>
+<body>
+    
+    <header>
+        <div class="menu">
+            <div class="logo"><img src="assets/img/logo.png" alt=""></div>
+            <div class="pages">
+                <a href="index.html">Ínicio</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="blog.html">Blog</a>
+                <a href="contato.html">Contato</a>
+                <a href="minhasviagens.html"><div class="circle"><img src="assets/img/icons/bag.png" alt=""></div></a>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="form">
+        ORIGEM
+        <select  name="" id="origem">
+            <option selected value="all">Todos</option>
+        </select>
+        DESTINO
+        <select name="" id="destino">
+            <option selected value="all">Todos</option>
+        </select>
+        <button style="padding: 10px 20px;" class="orange" id="go">BUSCAR</button>
+    </div>
+</main>
+    <div style="margin-bottom: 10rem;" class="table_area">
+        <div class="backgnd_table">
+            <table id="passTable" cellspacing="0" cellpadding="0">
+                <tr class="titles_table">
+                    <th class="title_table">ORIGEM</th>
+                    <th class="title_table">&nbsp;</th>
+                    <th class="title_table">DESTINO</th>
+                    <th class="title_table">IDA</th>
+                    <th class="title_table">VOLTA</th>
+                    <th class="title_table">DIAS</th>
+                    <th class="title_table">PREÇO</th>
+                </tr>
+        </table>
+    </div>
+    </div>
+    
+    <footer>
+        <div class="ft_bkgnd">
+            <div class="ft_logo"><img width="150px" src="assets/img/logo.png" alt=""></div>
+            <div class="text_tabs">
+                <div class="tabs">
+                    <a class="text_tab" href="">Minhas viagens</a>
+                    <a class="text_tab" href="">Passagens internacionais</a>
+                    <a class="text_tab" href="">Passagens nacionais</a>
+                    <a class="text_tab" href="">Passagens com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Passagens baratas</a>
+                    <a class="text_tab" href="">Passagens promocionais</a>
+                    <a class="text_tab" href="">Pacotes</a>
+                    <a class="text_tab" href="">Pacotes com desconto</a>
+                </div>
+                <div class="tabs">
+                    <a class="text_tab" href="">Sobre</a>
+                    <a class="text_tab" href="">Nosso blog</a>
+                    <a class="text_tab" href="">FAQs</a>
+                    <a class="text_tab" href="">Contato</a>
+                </div>
+            </div>
+            <h2 class="siga">Siga-nos! Nas redes sociais</h2>
+            <div class="redes_sociais">
+                <a href=""><img class="rede" src="assets/img/socialmedias/twiter.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/instagram.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/youtube.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/facebook.png" alt=""></a>
+                <a href=""><img class="rede" src="assets/img/socialmedias/pinterest.png" alt=""></a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    if(JSON.parse(localStorage.getItem('reservas')) == null || JSON.parse(localStorage.getItem('reservas').length == 0)){
+        var reservas = []
+        localStorage.setItem("reservas", JSON.stringify(reservas));
+    }
+
+    var passagens = JSON.parse(jsonpassagens)
+    var origem = document.getElementById('origem')
+    var destino = document.getElementById('destino')
+    var table = document.getElementById('passTable')
+   
+
+    for(let cidade in passagens.cidades){
+        let opt = document.createElement('option')
+        opt.value = passagens.cidades[cidade].nome
+        opt.textContent = passagens.cidades[cidade].nome
+        origem.append(opt)
+    }
+    origem.addEventListener('change', ()=>{
+        destino.innerHTML = '<option selected value="all">Todos</option>'
+        var destinos = []
+        
+        if(origem.value != 'all'){
+            for(let cidade in passagens.cidades){   
+                if(passagens.cidades[cidade].nome == origem.value){
+                    for(let i=0; i<passagens.cidades[cidade].viagens.length; i++){
+                        destinos.push(passagens.cidades[cidade].viagens[i].destino)
+                    }
+                }
+            }
+        }
+        var destinos = destinos.filter((este, i) => destinos.indexOf(este) === i);
+        destinos = destinos.sort()
+        for(ci of destinos){
+            let opt = document.createElement('option')
+            opt.value = ci
+            opt.textContent = ci
+            destino.append(opt)
+        }
+    })
+
+    var procurar = document.getElementById('go')
+    procurar.addEventListener('click', carregarTabela)
+
+    function carregarTabela(){
+        table.innerHTML = `                <tr class="titles_table">
+                    <th class="title_table">ORIGEM</th>
+                    <th class="title_table">&nbsp;</th>
+                    <th class="title_table">DESTINO</th>
+                    <th class="title_table">IDA</th>
+                    <th class="title_table">VOLTA</th>
+                    <th class="title_table">DIAS</th>
+                    <th class="title_table">PREÇO</th>
+                </tr>`
+        for(i in passagens.cidades){
+            if(origem.value == 'all' && destino.value == 'all'){
+                for(let j in passagens.cidades[i].viagens){
+                var passagem = passagens.cidades[i].viagens[j]
+                putInTable(passagem)
+               }
+            }
+            if(origem.value != 'all' && destino.value == 'all' && passagens.cidades[i].nome == origem.value){
+               for(let j in passagens.cidades[i].viagens){
+                var passagem = passagens.cidades[i].viagens[j]
+                putInTable(passagem)
+               }
+            }
+            if(origem.value == 'all' && destino.value != 'all'){
+                for(let j in passagens.cidades[i].viagens){
+                    if(passagens.cidades[i].viagens[j].destino == destino.value){
+                        var passagem = passagens.cidades[i].viagens[j]
+                        putInTable(passagem)
+                    }
+               }
+            }   
+            if(origem.value != 'all' && destino.value != 'all' && passagens.cidades[i].nome == origem.value){
+                for(let j in passagens.cidades[i].viagens){
+                    if(passagens.cidades[i].viagens[j].destino == destino.value){
+                        var passagem = passagens.cidades[i].viagens[j]
+                        putInTable(passagem)
+                    }
+               }
+            } 
+        }
+        var btns = document.querySelectorAll('button.btn_preco')
+    
+
+    for(let i=0; i<btns.length; i++){
+        btns[i].addEventListener('click', ()=>{
+            var reservas = JSON.parse(localStorage.getItem('reservas'))
+            btns[i].textContent = 'RESERVADO'
+            var id = btns[i].getAttribute('data-id')
+            if(reservas.indexOf(id) == -1 ){
+                reservas.push(id)
+                reservas2 = JSON.stringify(reservas)
+                localStorage.setItem('reservas', reservas2)
+            }
+        })
+    }
+    }
+    function putInTable(passagem){
+        var reservas = JSON.parse(localStorage.getItem('reservas'))
+        table.innerHTML += `
+                <tr>
+                    <td>${passagem.origem}</td>
+                    <td><i class="fa-solid fa-plane"></i></td>
+                    <td>${passagem.destino}</td>
+                    <td>${passagem.ida}</td>
+                    <td>${passagem.volta == undefined ? "--" : passagem.volta}</td>
+                    <td>${passagem["dias_de_viagem"]}</td>
+                    <td style="width: 100px;"><button data-id="${passagem.id}" class="btn_preco">${reservas.indexOf(passagem.id) != -1 ? 'RESERVADO' : 'R$' + passagem["preço"]}</button></td>
+                </tr>`
+    }
+
+</script>
+</html>

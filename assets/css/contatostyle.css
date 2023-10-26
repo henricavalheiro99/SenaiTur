@@ -1,0 +1,149 @@
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sec_txtcont{
+    background-image: url(../img/avaio_conato.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+}
+
+.sec_form{
+    background-image: linear-gradient(#FF7C32, #F6A428);
+    min-height: 73vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -100px;
+    padding: 50px;
+}
+
+.entre_contato{
+    position: absolute;
+    background-color: #FF7903;;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 180px;
+    width: 15%;
+    height: 7%;
+    box-shadow: 1px 1px 15px #FF7903;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.white_rec{
+    background-color: white;
+    width: 60%;
+    height: 40%;
+    box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.349);
+    border-radius: 29px;
+    margin-top: 50px;
+    color: rgb(77, 77, 77);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text_contato
+{
+    text-align:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    margin-top: 28px;
+}
+
+.emoji{
+    margin-top: 10px;
+    width: 25px;
+}
+
+label{
+    font-weight: bold;
+    color: #FF7903;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+input[type=text] {
+    height: 38px;
+    border: 2px solid #C5C5C5;
+    border-radius: 13px;
+}
+
+input[type=text]:focus {
+    outline: none;
+  }
+
+textarea{
+    border: 2px solid #C5C5C5;
+    border-radius: 13px;
+    height: 175px;
+    resize: none;
+}
+
+textarea:focus{
+    outline: none;
+}
+
+form{
+    padding: 28px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+form > label {
+    margin-bottom: 6px;
+    margin-top: 13px;
+}
+
+
+.nomesobrenome{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.nomesobrenome input{
+    width: 100%;
+}
+.separa{
+    display: flex;
+    flex-direction: column;
+}
+
+.bkgnd_gradiente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 50%;
+    background-image: linear-gradient(#FF7C32, #F6A428);
+}
+
+.bkgnd_form{
+    box-shadow: 4px 5px 20px rgba(0, 0, 0, 0.288);
+    border-radius: 45px;
+    background-color: white;
+    width: 48%;
+    height: 90%;
+}
+main{
+    margin-bottom: 100px;
+}

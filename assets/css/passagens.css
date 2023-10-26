@@ -1,0 +1,16 @@
+
+main{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    margin: 40px;
+    width: 80%;
+    font-weight: 700;
+    color: #FF7903;
+}
+select{
+    margin-right: 30px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Senai Thur</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contatostyle.css">
+</head>
+<style>
+    section{
+        text-align: justify;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0px 0px 25px #00000041;
+        margin: 3rem;
+    }
+    h1, h2, h3{
+        color: #FF7903;
+    }
+    h2, h3{
+        padding-bottom: 1rem;
+    }
+    #slide{
+        max-width: calc(100% - 10rem);
+        height: 60vh;
+    }
+</style>
+<body>
+
+    <header>
+        <div class="menu">
+            <div class="logo"><img src="assets/img/logo.png" alt=""></div>
+            <div class="pages">
+                <a href="sobre.html">Sobre</a>
+                <a href="passagens.html">Passagens</a>
+                <a href="avaliacoes.html">Avaliações</a>
+                <a href="blog.html">Blog</a>
+                <a href="contato.html">Contato</a>
+                <a href="minhasviagens.html"><div class="circle"><img src="assets/img/icons/bag.png" alt=""></div></a>
+            </div>
+        </div>
+    </header>
+    <section id="slide">
+
+    </section>
+    <div class="container">
+        <section>
+            <h2>Quem Somos</h2>
+            <p>O Senai Thur é uma empresa de viagens aéreas dedicada a tornar as suas aventuras pelo ar tão emocionantes quanto o destino em si. Nossa equipe apaixonada e experiente está empenhada em fornecer serviços de alta qualidade para satisfazer todas as suas necessidades de viagem.</p>
+        </section>
+
+        <section>
+            <h2>Nossa Missão</h2>
+            <p>Nossa missão é criar experiências de viagem excepcionais para nossos clientes, conectando-os com destinos emocionantes em todo o mundo. Queremos facilitar a descoberta, a aventura e a reunião de pessoas, encurtando distâncias e tornando o mundo mais acessível.</p>
+        </section>
+
+        <section>
+            <h2>O Que Oferecemos</h2>
+            <p>No Senai Thur, oferecemos uma ampla gama de serviços e recursos para tornar a sua jornada aérea mais agradável e tranquila.</p>
+            <ul>
+                <li>Reservas Simples</li>
+                <li>Destinos Exclusivos</li>
+                <li>Atendimento ao Cliente 24/7</li>
+                <li>Conforto e Segurança</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Compromisso com o Meio Ambiente</h2>
+            <p>No Senai Thur, também nos preocupamos com o meio ambiente. Estamos comprometidos em reduzir nosso impacto ambiental e em apoiar iniciativas sustentáveis na indústria de viagens aéreas.</p>
+        </section>
+
+        <section class="contact-info">
+            <h2>Entre em Contato</h2>
+            <p>Estamos ansiosos para ajudá-lo a planejar a sua próxima aventura! Entre em contato conosco para obter mais informações ou fazer uma reserva:</p>
+            <ul>
+                <li>Telefone: +XX XXXX-XXXX</li>
+                <li>Email: <a href="mailto:info@senaithur.com">info@senaithur.com</a></li>
+                <li>Endereço: Rua das Nuvens, 1234 - Cidade dos Sonhos, País</li>
+            </ul>
+        </section>
+
+        <footer>
+            <div class="ft_bkgnd">
+                <div class="ft_logo"><img width="150px" src="assets/img/logo.png" alt=""></div>
+                <div class="text_tabs">
+                    <div class="tabs">
+                        <a class="text_tab" href="">Minhas viagens</a>
+                        <a class="text_tab" href="">Passagens internacionais</a>
+                        <a class="text_tab" href="">Passagens nacionais</a>
+                        <a class="text_tab" href="">Passagens com desconto</a>
+                    </div>
+                    <div class="tabs">
+                        <a class="text_tab" href="">Passagens baratas</a>
+                        <a class="text_tab" href="">Passagens promocionais</a>
+                        <a class="text_tab" href="">Pacotes</a>
+                        <a class="text_tab" href="">Pacotes com desconto</a>
+                    </div>
+                    <div class="tabs">
+                        <a class="text_tab" href="">Sobre</a>
+                        <a class="text_tab" href="">Nosso blog</a>
+                        <a class="text_tab" href="">FAQs</a>
+                        <a class="text_tab" href="">Contat</a>
+                    </div>
+                </div>
+                <h2 class="siga">Siga-nos! Nas redes sociais</h2>
+                <div class="redes_sociais">
+                    <a href=""><img class="rede" src="assets/img/socialmedias/twiter.png" alt=""></a>
+                    <a href=""><img class="rede" src="assets/img/socialmedias/instagram.png" alt=""></a>
+                    <a href=""><img class="rede" src="assets/img/socialmedias/youtube.png" alt=""></a>
+                    <a href=""><img class="rede" src="assets/img/socialmedias/facebook.png" alt=""></a>
+                    <a href=""><img class="rede" src="assets/img/socialmedias/pinterest.png" alt=""></a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+<script>
+    var slide = document.getElementById('slide')
+    let i = 0
+setInterval(() => {
+    slide.style.backgroundImage = `url(assets/img/slide/${i}.png)`
+    i++
+    i > 7 ? i=0 : i=i
+}, 3000);
+
+</script>
+</html>

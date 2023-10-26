@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/wallpaper_barco.jpg);
+}
+
+main {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wht_cont{
+    background-color: white;
+    width: 62%;
+    max-height: 92%;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 13px rgba(41, 41, 41, 0.658);
+}
+.orng_title{
+    display: flex;
+    height: 130px;
+    width: 62%;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF7903;
+}
+.alingmg_cont{
+    width: 92%;
+    display: flex;
+    align-items: end;
+}
+.orng_title span{
+    width: 100%;
+    font-size: 2em;
+    font-weight: bold;
+    color:white;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-bottom: 2px solid white;
+}
+.center_grid{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 83%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+.grid_1{
+    width: 92%;
+    height: 92%;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 2fr;
+}
+.infos{
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 1fr 2fr;
+}
+.infos > * {
+    border: 2px solid #FF7903;
+}
+.gd_viagens span{
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #FF7903;
+}
+.gd_viagens .risco{
+    margin-top: 5px;
+    border-bottom: 2px solid #FF7903;
+}
+.gd_viagens-itens{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 20px;
+}
+.user_cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.user_cont span {
+    color: #404040;
+    margin-top: 8px;
+    font-size: 13px;
+}
+.dot{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/wallpaper_barco.jpg);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.fill{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 185px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 0 13px rgba(82, 82, 82, 0.5);
+    z-index: 1000;
+}
+.city_img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 45%;
+    height: 100%;
+    background-color: #404040;
+    border-radius: 30px 0 0 30px;
+}
+.gd_viagens_info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.gd_viagens_info .inf_cidade{
+    font-size: 24px;
+    color: #FF7903;
+}
+.gd_viagens_info .estado{
+    font-style: italic;
+    font-size: 16px;
+    color: #21A54E;
+}
+.gd_viagens_info .separa_idavolta span{
+    font-weight: 600;
+    font-size: 12px;
+    color: #959595;
+}
+.gd_viagens_info .voo_dur{
+    font-weight: 600;
+    font-size: 12px;
+    color: #959595;
+}
+.gd_viagens_info .preco{
+    font-size: 34px;
+    margin-top: 15px;
+    color: #21A54E;
+}
+.gd_viagens_info span{
+    margin-left: 23px;
+}
+.separa_cidest{
+    display: flex;
+    flex-direction: column;
+    margin-top: 23px;
+}
+.gd_viagens_info .separa_idavolta{
+    margin-top: 10px;
+}
+.extra{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: -5px;
+    width: 96%;
+    height: 45px;
+    border-radius: 0 0 30px 30px;
+    background-color: white;
+    box-shadow: 0 0 13px rgba(82, 82, 82, 0.5);
+    z-index: 0;
+}
+.gd_viagens-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.extra .classif{
+    margin-left: 30px;
+    font-size: 14px;
+}
+.stars{
+    margin-left: 15px;
+}
+.stars i{
+    cursor: pointer;
+    color: #c4c4c4;
+    transition: color 0.2s;
+}
+.stars i.active{
+    color: rgb(238, 205, 17);
+}
+.count_star{
+    margin-top: 2px;
+    margin-left: 15px;
+    font-size: 16px !important;
+    font-style: italic;
+    color: #959595 !important;
+}
